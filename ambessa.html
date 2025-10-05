@@ -4,99 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ambessa - Toplane Kingdom</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('img/fondoambessa.jpg'); /* Cambia por tu imagen de K'Sante */
-    background-size: cover;
-    background-position: center;
-    color: #f1f1f1;
-    min-height: 100vh;
-    backdrop-filter: brightness(0.85);
-  }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('img/fondoambessa.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #f1f1f1;
+      min-height: 100vh;
+      backdrop-filter: brightness(0.85);
+    }
 
-  header {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 25px 0;
-    font-size: 32px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #333;
-  }
+    header {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 25px 0;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #333;
+    }
 
-  main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-  }
+    main {
+      max-width: 1200px; /* más ancho */
+      margin: 40px auto;
+      padding: 25px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
 
-  details {
-    background-color: rgba(20, 20, 20, 0.8);
-    margin-bottom: 15px;
-    border-radius: 8px;
-    padding: 10px 15px;
-    border: 1px solid #444;
-  }
+    details {
+      background-color: rgba(20, 20, 20, 0.85);
+      margin-bottom: 20px;
+      border-radius: 8px;
+      padding: 10px 15px;
+      border: 1px solid #444;
+    }
 
-  summary {
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    color: #4ea3ff;
-    padding: 5px;
-  }
+    summary {
+      cursor: pointer;
+      font-size: 22px;
+      font-weight: bold;
+      color: #4ea3ff;
+      padding: 5px;
+    }
 
-  summary:hover {
-    color: #70c8ff;
-  }
+    summary:hover {
+      color: #70c8ff;
+    }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      table-layout: fixed;
+      word-wrap: break-word;
+    }
 
-  th, td {
-    border: 1px solid #555;
-    padding: 10px;
-    text-align: center;
-    font-size: 15px;
-  }
+    th, td {
+      border: 1px solid #555;
+      padding: 10px;
+      text-align: center;
+      font-size: 15px;
+    }
 
-  th {
-    background-color: rgba(50, 50, 50, 0.9);
-    color: #4ea3ff;
-  }
+    th {
+      background-color: rgba(50, 50, 50, 0.9);
+      color: #4ea3ff;
+    }
 
-  td {
-    background-color: rgba(30, 30, 30, 0.7);
-  }
+    td {
+      background-color: rgba(30, 30, 30, 0.75);
+    }
 
-  img.tierlist {
-    width: 100%;
-    max-width: 850px;
-    border-radius: 10px;
-    margin-top: 15px;
-    border: 2px solid #333;
-  }
+    /* Ajuste de anchos por columna */
+    th:nth-child(1), td:nth-child(1) { width: 15%; } /* Campeón */
+    th:nth-child(2), td:nth-child(2) { width: 18%; } /* Runas */
+    th:nth-child(3), td:nth-child(3) { width: 13%; } /* Summoners */
+    th:nth-child(4), td:nth-child(4) { width: 13%; } /* Primer objeto */
+    th:nth-child(5), td:nth-child(5) { width: 41%; text-align: left; padding-left: 10px; } /* Gameplan */
 
-  a.volver {
-    display: inline-block;
-    margin-top: 30px;
-    text-decoration: none;
-    color: #4ea3ff;
-    font-weight: bold;
-    font-size: 16px;
-  }
+    img.tierlist {
+      width: 100%;
+      max-width: 850px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border: 2px solid #333;
+    }
 
-  a.volver:hover {
-    color: #70c8ff;
-  }
-</style>
+    a.volver {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #4ea3ff;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    a.volver:hover {
+      color: #70c8ff;
+    }
+  </style>
 </head>
 <body>
 
@@ -117,38 +126,52 @@
     </details>
 
     <!-- Sección 2: Matchups -->
-    <details>
-      <summary>⚔️ Matchups y runas</summary>
+    <details open>
+      <summary>⚔️ Matchups detallados</summary>
       <table>
         <tr>
-          <th>Campeón enemigo</th>
-          <th>Dificultad</th>
-          <th>Runas recomendadas</th>
-          <th>Hechizos</th>
-          <th>Notas</th>
+          <th>Campeón</th>
+          <th>Runas</th>
+          <th>Summoners</th>
+          <th>1er Ítem</th>
+          <th>Gameplan / Notas</th>
         </tr>
         <tr>
           <td>Renekton</td>
-          <td>Difícil</td>
           <td>Conquistador + Tenacidad</td>
           <td>Destello + Fantasmal</td>
-          <td>Juega pasivo antes de nivel 6, evita intercambios largos.</td>
+          <td>Cuchilla Negra</td>
+          <td>Evita intercambios antes de nivel 6. Espera tus picos de poder y kitea con el rango. Nunca luches con su furia cargada.</td>
         </tr>
         <tr>
           <td>Gwen</td>
-          <td>Medio</td>
-          <td>Ritmo Fatal</td>
+          <td>Ritmo Fatal + Triunfo</td>
           <td>Destello + Fantasmal</td>
-          <td>Abusa del rango en los primeros niveles.</td>
+          <td>Eclipse</td>
+          <td>Presiona pre 6 y abusa del rango. Guarda tu movilidad para cuando active su zona. Prioriza daño sostenido.</td>
         </tr>
         <tr>
           <td>Ornn</td>
-          <td>Fácil</td>
           <td>Conquistador</td>
           <td>Destello + Teleportar</td>
-          <td>Castiga su falta de movilidad, fuerza peleas cortas.</td>
+          <td>Eclipse</td>
+          <td>Matchup fácil. Castiga cuando gasta su Q o W, corta sus engages y forza trades cortos. Juega con prio de línea.</td>
         </tr>
-        <!-- Añade más filas según tus matchups -->
+        <tr>
+          <td>K’Sante</td>
+          <td>Conquistador + Último Esfuerzo</td>
+          <td>Destello + Fantasmal</td>
+          <td>Cuchilla Negra</td>
+          <td>No luches cuando tenga sus habilidades defensivas. Juega alrededor de tus cooldowns y poke constante.</td>
+        </tr>
+        <tr>
+          <td>Olaf</td>
+          <td>Conquistador</td>
+          <td>Destello + Fantasmal</td>
+          <td>Corazón de acero</td>
+          <td>Evita intercambios largos, espera tus timings de rango. Nunca pelees en melee prolongado, juega con kiteo.</td>
+        </tr>
+        <!-- Puedes seguir agregando más filas -->
       </table>
     </details>
 

@@ -22,13 +22,14 @@
     }
 
     /* Overlay oscuro */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-    
-      z-index: 0;
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Esto agrega el overlay oscuro */
+  z-index: 0;
+}
     }
 
     /* Contenido por encima del overlay */

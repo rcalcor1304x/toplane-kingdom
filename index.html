@@ -13,7 +13,7 @@
       text-align: center;
 
       /* Fondo expandido */
-      background-image: url('img/wallpaper.jpg'); /* Cambia por tu imagen local */
+      background-image: url('img/wallpaper.jpg');
       background-size: cover; /* Expande la imagen */
       background-position: center; /* Centra la imagen */
       background-repeat: no-repeat; /* Evita repetición */
@@ -22,22 +22,20 @@
     }
 
     /* Overlay oscuro */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0); /* oscuro semi-transparente para que se vea el wallpaper */
-  z-index: 0;
-}
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0); /* semi-transparente para resaltar contenido */
+      z-index: 0;
     }
 
     /* Contenido por encima del overlay */
-header, .champions, h2, footer {
-  position: relative;
-  z-index: 1;
-}
-
+    header, .champions, h2, footer {
+      position: relative;
+      z-index: 1;
+    }
 
     header {
       background-color: rgba(21, 21, 21, 0.8);
@@ -107,6 +105,16 @@ header, .champions, h2, footer {
   <h2>Elija campeón</h2>
 
   <div class="champions">
+    <a href="ambessa.html" class="champion">
+      <img src="IMG_0686.webp" alt="Ambessa">
+      <div class="champion-name">Ambessa</div>
+    </a>
+
+    <a href="ksante.html" class="champion">
+      <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/KSante.png" alt="K’Sante">
+      <div class="champion-name">K’Sante</div>
+    </a>
+
     <a href="urgot.html" class="champion">
       <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/Urgot.png" alt="Urgot">
       <div class="champion-name">Urgot</div>
@@ -115,11 +123,6 @@ header, .champions, h2, footer {
     <a href="shen.html" class="champion">
       <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/Shen.png" alt="Shen">
       <div class="champion-name">Shen</div>
-    </a>
-
-    <a href="ambessa.html" class="champion">
-      <img src="IMG_0686.webp" alt="Ambessa">
-      <div class="champion-name">Ambessa</div>
     </a>
 
     <a href="olaf.html" class="champion">
@@ -140,11 +143,6 @@ header, .champions, h2, footer {
     <a href="ornn.html" class="champion">
       <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/Ornn.png" alt="Ornn">
       <div class="champion-name">Ornn</div>
-    </a>
-
-    <a href="ksante.html" class="champion">
-      <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/KSante.png" alt="K’Sante">
-      <div class="champion-name">K’Sante</div>
     </a>
   </div>
 

@@ -27,7 +27,7 @@
     }
 
     main {
-      max-width: 1200px; /* más ancho */
+      max-width: 1200px;
       margin: 40px auto;
       padding: 25px;
       background-color: rgba(0, 0, 0, 0.6);
@@ -79,11 +79,24 @@
     }
 
     /* Ajuste de anchos por columna */
-    th:nth-child(1), td:nth-child(1) { width: 15%; } /* Campeón */
-    th:nth-child(2), td:nth-child(2) { width: 18%; } /* Runas */
-    th:nth-child(3), td:nth-child(3) { width: 13%; } /* Summoners */
-    th:nth-child(4), td:nth-child(4) { width: 13%; } /* Primer objeto */
-    th:nth-child(5), td:nth-child(5) { width: 41%; text-align: left; padding-left: 10px; } /* Gameplan */
+    th:nth-child(1), td:nth-child(1) { width: 14%; } /* Campeón */
+    th:nth-child(2), td:nth-child(2) { width: 13%; } /* Runas */
+    th:nth-child(3), td:nth-child(3) { width: 11%; } /* Summoners */
+    th:nth-child(4), td:nth-child(4) { width: 11%; } /* 1er Ítem */
+    th:nth-child(5), td:nth-child(5) { width: 36%; text-align: left; padding-left: 10px; } /* Gameplan */
+    th:nth-child(6), td:nth-child(6) { width: 7%; } /* Dificultad */
+
+    .dificultad {
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 4px 8px;
+      display: inline-block;
+      color: white;
+    }
+
+    .facil { background-color: #3fa63f; }   /* Verde */
+    .media { background-color: #c7a128; }   /* Amarillo */
+    .dificil { background-color: #c43a3a; } /* Rojo */
 
     img.tierlist {
       width: 100%;
@@ -135,6 +148,7 @@
           <th>Summoners</th>
           <th>1er Ítem</th>
           <th>Gameplan / Notas</th>
+          <th>Dificultad</th>
         </tr>
         <tr>
           <td>Renekton</td>
@@ -142,6 +156,7 @@
           <td>Destello + Fantasmal</td>
           <td>Cuchilla Negra</td>
           <td>Evita intercambios antes de nivel 6. Espera tus picos de poder y kitea con el rango. Nunca luches con su furia cargada.</td>
+          <td><span class="dificultad dificil">8/10</span></td>
         </tr>
         <tr>
           <td>Gwen</td>
@@ -149,6 +164,7 @@
           <td>Destello + Fantasmal</td>
           <td>Eclipse</td>
           <td>Presiona pre 6 y abusa del rango. Guarda tu movilidad para cuando active su zona. Prioriza daño sostenido.</td>
+          <td><span class="dificultad media">6/10</span></td>
         </tr>
         <tr>
           <td>Ornn</td>
@@ -156,6 +172,7 @@
           <td>Destello + Teleportar</td>
           <td>Eclipse</td>
           <td>Matchup fácil. Castiga cuando gasta su Q o W, corta sus engages y forza trades cortos. Juega con prio de línea.</td>
+          <td><span class="dificultad facil">3/10</span></td>
         </tr>
         <tr>
           <td>K’Sante</td>
@@ -163,6 +180,7 @@
           <td>Destello + Fantasmal</td>
           <td>Cuchilla Negra</td>
           <td>No luches cuando tenga sus habilidades defensivas. Juega alrededor de tus cooldowns y poke constante.</td>
+          <td><span class="dificultad media">5/10</span></td>
         </tr>
         <tr>
           <td>Olaf</td>
@@ -170,8 +188,8 @@
           <td>Destello + Fantasmal</td>
           <td>Corazón de acero</td>
           <td>Evita intercambios largos, espera tus timings de rango. Nunca pelees en melee prolongado, juega con kiteo.</td>
+          <td><span class="dificultad dificil">9/10</span></td>
         </tr>
-        <!-- Puedes seguir agregando más filas -->
       </table>
     </details>
 
@@ -179,7 +197,7 @@
     <details>
       <summary>📊 Matchup Tierlist</summary>
       <p>Tierlist de Matchups:</p>
-      <img src="IMG_0688.jpeg" alt="Tierlist de Ambessa" class="tierlist">
+      <img src="img/ambessa-tierlist.jpg" alt="Tierlist de Ambessa" class="tierlist">
     </details>
 
     <a href="index.html" class="volver">← Volver al menú principal</a>

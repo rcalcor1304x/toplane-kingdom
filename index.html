@@ -173,37 +173,48 @@
   }
 </script>
 
-  <script>
-    const champData = {
-      Ambessa: {
-        builds: "Builds de ejemplo: Fuerza de trinidad, Steraks, etc.",
-        matchups: "Ver matchups completos abajo.",
-        winrate: "50.5%"
-      },
-      Sion: {
-        builds: "Builds: Coraza del muerto, Placa del muerto, etc.",
-        matchups: "Fuerte contra tanques lentos, débil contra asesinos.",
-        winrate: "51.2%"
-      },
-      Renekton: { builds: "Sterak, Corte de Youmuu, etc.", matchups: "Fuerte contra luchadores, débil contra control de masas.", winrate: "52.8%" },
-      Kennen: { builds: "...", matchups: "...", winrate: "50.5%" },
-      Rumble: { builds: "...", matchups: "...", winrate: "48.7%" },
-      Zaahen: { builds: "...", matchups: "...", winrate: "47.0%" },
-      Ksante: { builds: "...", matchups: "...", winrate: "50.0%" },
-      Aatrox: { builds: "...", matchups: "...", winrate: "51.5%" },
-      Gwen: { builds: "...", matchups: "...", winrate: "49.8%" },
-      Gnar: { builds: "...", matchups: "...", winrate: "50.1%" },
-      Shen: { builds: "...", matchups: "...", winrate: "50.3%" },
-      Urgot: { builds: "...", matchups: "...", winrate: "49.6%" }
-    };
+<!-- AMBESSA MATCHUPS COMPLETOS -->
+<section id="ambessa-all-matchups" class="matchup-section" style="display:none;">
+  <h2>📊 Ambessa – Matchups Top Lane (Winrates)</h2>
+  <!-- ... resto del contenido igual ... -->
+</section>
 
-    function showDetails(champ) {
-      document.getElementById('champ-name').textContent = champ;
-      document.getElementById('champ-builds').textContent = "Builds recomendadas: " + champData[champ].builds;
-      document.getElementById('champ-matchups').textContent = "Matchups: " + champData[champ].matchups;
-      document.getElementById('champ-winrate').textContent = "Winrate: " + champData[champ].winrate;
+<script>
+  const champData = {
+    Ambessa: {
+      builds: "Builds de ejemplo: Fuerza de trinidad, Steraks, etc.",
+      matchups: "Ver matchups completos abajo.",
+      winrate: "50.5%"
+    },
+    Sion: { builds: "Builds: Coraza del muerto, Placa del muerto, etc.", matchups: "Fuerte contra tanques lentos, débil contra asesinos.", winrate: "51.2%" },
+    Renekton: { builds: "Sterak, Corte de Youmuu, etc.", matchups: "Fuerte contra luchadores, débil contra control de masas.", winrate: "52.8%" },
+    Kennen: { builds: "...", matchups: "...", winrate: "50.5%" },
+    Rumble: { builds: "...", matchups: "...", winrate: "48.7%" },
+    Zaahen: { builds: "...", matchups: "...", winrate: "47.0%" },
+    Ksante: { builds: "...", matchups: "...", winrate: "50.0%" },
+    Aatrox: { builds: "...", matchups: "...", winrate: "51.5%" },
+    Gwen: { builds: "...", matchups: "...", winrate: "49.8%" },
+    Gnar: { builds: "...", matchups: "...", winrate: "50.1%" },
+    Shen: { builds: "...", matchups: "...", winrate: "50.3%" },
+    Urgot: { builds: "...", matchups: "...", winrate: "49.6%" }
+  };
+
+  function showDetails(champ) {
+    // Actualizar la sección principal
+    document.getElementById('champ-name').textContent = champ;
+    document.getElementById('champ-builds').textContent = "Builds recomendadas: " + champData[champ].builds;
+    document.getElementById('champ-matchups').textContent = "Matchups: " + champData[champ].matchups;
+    document.getElementById('champ-winrate').textContent = "Winrate: " + champData[champ].winrate;
+
+    // Mostrar u ocultar Ambessa matchups
+    const ambessaSection = document.getElementById('ambessa-all-matchups');
+    if (champ === 'Ambessa') {
+      ambessaSection.style.display = 'block'; // mostrar
+    } else {
+      ambessaSection.style.display = 'none'; // ocultar
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>

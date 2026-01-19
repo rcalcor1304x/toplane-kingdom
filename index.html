@@ -2,154 +2,158 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toplane Kingdom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis 13 Campeones LoL</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      text-align: center;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color:  #f1f1f1;
-      text-align: center;
-
-      /* Fondo expandido */
-      background-image: url('img/wallpaper.jpg');
-      background-size: cover; /* Expande la imagen */
-      background-position: center; /* Centra la imagen */
-      background-repeat: no-repeat; /* Evita repetición */
-      position: relative;
-      min-height: 100vh;
     }
-
-    /* Overlay oscuro */
- body::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0); /* semi-transparente */
-  z-index: 0;
-  pointer-events: none; /* ¡Esto permite clicar elementos debajo! */
-}
-
-    /* Contenido por encima del overlay */
-    header, .champions, h2, footer {
-      position: relative;
-      z-index: 1;
-    }
-
     header {
-      background-color: rgba(21, 21, 21, 0.8);
-      padding: 30px 0;
-      font-size: 36px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      border-bottom: 2px solid #333;
+      padding: 20px;
+      background-color: #111;
     }
-
-    h2 {
-      margin-top: 40px;
-      font-size: 24px;
-      color: #FFFFFF;
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #ffcc00;
     }
-
-    .champions {
+    .champion-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 40px;
-      margin: 60px auto;
-      max-width: 900px;
+      gap: 15px;
+      padding: 20px;
     }
-
-    .champion {
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
+    .champion-card {
+      width: 100px;
+      cursor: pointer;
     }
-
-    .champion img {
-      width: 130px;
-      height: 130px;
+    .champion-card img {
+      width: 100%;
       border-radius: 10px;
       border: 2px solid #444;
-      object-fit: cover;
+      transition: border 0.3s;
     }
-
-    .champion:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 10px #4ea3ff;
+    .champion-card img:hover {
+      border: 2px solid #ffcc00;
     }
-
-    .champion-name {
-      margin-top: 8px;
-      font-size: 16px;
-      color: #FFFFFF;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    footer {
-      margin-top: 60px;
+    #details {
       padding: 20px;
-      font-size: 14px;
-      color: #FFFFFF;
+      margin-top: 20px;
+      background-color: #222;
+      border-top: 1px solid #444;
+    }
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <header>TOPLANE KINGDOM</header>
+  <header>
+    <h1>Mis Campeones de League of Legends</h1>
+  </header>
 
-  <h2>Elija campeón</h2>
+  <section class="champion-container">
+    <!-- Lista de campeones -->
+    <div class="champion-card" onclick="showDetails('Ambessa')">
+      <img src="img/Ambessa.png" alt="Ambessa">
+      <p>Ambessa</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Sion')">
+      <img src="img/Sion.png" alt="Sion">
+      <p>Sion</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Renekton')">
+      <img src="img/Renekton.png" alt="Renekton">
+      <p>Renekton</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Kennen')">
+      <img src="img/Kennen.png" alt="Kennen">
+      <p>Kennen</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Rumble')">
+      <img src="img/Rumble.png" alt="Rumble">
+      <p>Rumble</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Zaahen')">
+      <img src="img/Zaahen.png" alt="Zaahen">
+      <p>Zaahen</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Ksante')">
+      <img src="img/Ksante.png" alt="Ksante">
+      <p>Ksante</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Aatrox')">
+      <img src="img/Aatrox.png" alt="Aatrox">
+      <p>Aatrox</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Gwen')">
+      <img src="img/Gwen.png" alt="Gwen">
+      <p>Gwen</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Gnar')">
+      <img src="img/Gnar.png" alt="Gnar">
+      <p>Gnar</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Shen')">
+      <img src="img/Shen.png" alt="Shen">
+      <p>Shen</p>
+    </div>
+    <div class="champion-card" onclick="showDetails('Urgot')">
+      <img src="img/Urgot.png" alt="Urgot">
+      <p>Urgot</p>
+    </div>
+  </section>
 
-  <div class="champions">
-    <a href="ambessa.html" class="champion">
-      <img src="IMG_0686.webp" alt="Ambessa">
-      <div class="champion-name">Ambessa</div>
-    </a>
+  <section id="details">
+    <h2 id="champ-name">Selecciona un campeón</h2>
+    <p id="champ-builds">Aquí aparecerán las builds recomendadas.</p>
+    <p id="champ-matchups">Aquí aparecerán los mejores matchups y peores matchups según winrate.</p>
+    <p id="champ-winrate">Winrate general: --%</p>
+  </section>
 
-    <a href="ksante.html" class="champion">
-      <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/KSante.png" alt="K’Sante">
-      <div class="champion-name">K’Sante</div>
-    </a>
+  <script>
+    const champData = {
+      Ambessa: {
+        builds: "Builds de ejemplo: Fuerza de trinidad, Steraks, etc.",
+        matchups: "Fuerte contra X, débil contra Y.",
+        winrate: "49.3%"
+      },
+      Sion: {
+        builds: "Builds: Coraza del muerto, Placa del muerto, etc.",
+        matchups: "Fuerte contra tanques lentos, débil contra asesinos.",
+        winrate: "51.2%"
+      },
+      Renekton: {
+        builds: "Sterak, Corte de Youmuu, etc.",
+        matchups: "Fuerte contra luchadores, débil contra control de masas.",
+        winrate: "52.8%"
+      },
+      // Añade el resto de campeones aquí
+      Kennen: { builds: "...", matchups: "...", winrate: "50.5%" },
+      Rumble: { builds: "...", matchups: "...", winrate: "48.7%" },
+      Zaahen: { builds: "...", matchups: "...", winrate: "47.0%" },
+      Ksante: { builds: "...", matchups: "...", winrate: "50.0%" },
+      Aatrox: { builds: "...", matchups: "...", winrate: "51.5%" },
+      Gwen: { builds: "...", matchups: "...", winrate: "49.8%" },
+      Gnar: { builds: "...", matchups: "...", winrate: "50.1%" },
+      Shen: { builds: "...", matchups: "...", winrate: "50.3%" },
+      Urgot: { builds: "...", matchups: "...", winrate: "49.6%" }
+    };
 
-    <a href="urgot.html" class="champion">
-      <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/Urgot.png" alt="Urgot">
-      <div class="champion-name">Urgot</div>
-    </a>
-
-    <a href="shen.html" class="champion">
-      <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/Shen.png" alt="Shen">
-      <div class="champion-name">Shen</div>
-    </a>
-
-    <a href="olaf.html" class="champion">
-      <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/Olaf.png" alt="Olaf">
-      <div class="champion-name">Olaf</div>
-    </a>
-
-    <a href="jax.html" class="champion">
-      <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/Jax.png" alt="Jax">
-      <div class="champion-name">Jax</div>
-    </a>
-
-    <a href="renekton.html" class="champion">
-      <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/Renekton.png" alt="Renekton">
-      <div class="champion-name">Renekton</div>
-    </a>
-
-    <a href="ornn.html" class="champion">
-      <img src="https://ddragon.leagueoflegends.com/cdn/14.20.1/img/champion/Ornn.png" alt="Ornn">
-      <div class="champion-name">Ornn</div>
-    </a>
-  </div>
-
-  <footer>
-    © 2025 Toplane Kingdom — Guía personal de matchups
-  </footer>
+    function showDetails(champ) {
+      document.getElementById('champ-name').textContent = champ;
+      document.getElementById('champ-builds').textContent = "Builds recomendadas: " + champData[champ].builds;
+      document.getElementById('champ-matchups').textContent = "Matchups: " + champData[champ].matchups;
+      document.getElementById('champ-winrate').textContent = "Winrate: " + champData[champ].winrate;
+    }
+  </script>
 
 </body>
 </html>

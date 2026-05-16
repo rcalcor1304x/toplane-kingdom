@@ -1,219 +1,247 @@
+<?php
+$matchups = [
+    [
+        "name" => "Fiora",
+        "difficulty" => "Extreme",
+        "image" => "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Fiora_0.jpg"
+    ],
+    [
+        "name" => "Camille",
+        "difficulty" => "Hard",
+        "image" => "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Camille_0.jpg"
+    ],
+    [
+        "name" => "Darius",
+        "difficulty" => "Hard",
+        "image" => "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Darius_0.jpg"
+    ],
+    [
+        "name" => "Aatrox",
+        "difficulty" => "Medium",
+        "image" => "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg"
+    ],
+    [
+        "name" => "Jax",
+        "difficulty" => "Hard",
+        "image" => "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jax_0.jpg"
+    ],
+    [
+        "name" => "Malphite",
+        "difficulty" => "Easy",
+        "image" => "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Malphite_0.jpg"
+    ]
+];
+?>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mis 13 Campeones LoL</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: #e0e0e0;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      padding: 20px;
-      background-color: #111;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #ffcc00;
-    }
-    .champion-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
-    }
-    .champion-card {
-      width: 100px;
-      cursor: pointer;
-    }
-    .champion-card img {
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid #444;
-      transition: border 0.3s;
-    }
-    .champion-card img:hover {
-      border: 2px solid #ffcc00;
-    }
-    #details {
-      padding: 20px;
-      margin-top: 20px;
-      background-color: #222;
-      border-top: 1px solid #444;
-    }
-    /* Estilos adicionales para Ambessa matchups */
-    .matchup-section {
-      background:#111; 
-      padding:22px; 
-      border-radius:12px; 
-      margin:22px auto; 
-      max-width:720px; 
-      color:#fff; 
-      font-family:Arial, sans-serif;
-    }
-    .matchup-section h2 { color:#ffcc00; font-size:2rem; margin-bottom:12px; }
-    .matchup-block { background:#222; padding:15px; border-radius:8px; margin-bottom:18px; }
-    .matchup-block h3 { font-size:1.3rem; margin-bottom:8px; }
-    .matchup-block ul { text-align:left; font-size:0.95rem; line-height:1.6; padding-left:22px; margin:0; }
-    .matchup-desc { font-size:0.85rem; margin-top:12px; color:#ccc; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ornn Matchups</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #050505;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .navbar {
+            width: 100%;
+            border-bottom: 1px solid #1f1f1f;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-content {
+            max-width: 1400px;
+            margin: auto;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .navbar img {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #f97316;
+        }
+
+        .logo-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #f97316;
+        }
+
+        .logo-sub {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .hero {
+            max-width: 1400px;
+            margin: auto;
+            padding: 80px 24px 40px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #f97316;
+            line-height: 1;
+        }
+
+        .hero p {
+            margin-top: 16px;
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            max-width: 1400px;
+            margin: auto;
+            padding: 20px 24px 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #0f0f0f;
+            border: 1px solid #1f1f1f;
+            border-radius: 22px;
+            overflow: hidden;
+            transition: 0.25s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #f97316;
+            box-shadow: 0 0 25px rgba(249,115,22,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .champion-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            background: rgba(249,115,22,0.15);
+            color: #f97316;
+        }
+
+        .footer {
+            text-align: center;
+            color: #555;
+            padding: 30px;
+            border-top: 1px solid #1f1f1f;
+        }
+
+        @media(max-width: 768px) {
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+
+            .card img {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Mis Campeones de League of Legends</h1>
-  </header>
+<nav class="navbar">
+    <div class="navbar-content">
+        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ornn_0.jpg">
 
-  <section class="champion-container">
-    <!-- Lista de campeones -->
-    <div class="champion-card" onclick="showDetails('Ambessa')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Ambessa.png" alt="Ambessa">
-      <p>Ambessa</p>
+        <div>
+            <div class="logo-title">ORNN MATCHUPS</div>
+            <div class="logo-sub">Top Lane Guide</div>
+        </div>
     </div>
-    <div class="champion-card" onclick="showDetails('Sion')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Sion.png" alt="Sion">
-      <p>Sion</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Renekton')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Renekton.png" alt="Renekton">
-      <p>Renekton</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Kennen')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Kennen.png" alt="Kennen">
-      <p>Kennen</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Rumble')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Rumble.png" alt="Rumble">
-      <p>Rumble</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Zaahen')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/16.1.1/img/champion/Zaahen.png" alt="Zaahen">
-      <p>Zaahen</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Ksante')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/KSante.png" alt="Ksante">
-      <p>Ksante</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Aatrox')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Aatrox.png" alt="Aatrox">
-      <p>Aatrox</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Gwen')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Gwen.png" alt="Gwen">
-      <p>Gwen</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Gnar')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Gnar.png" alt="Gnar">
-      <p>Gnar</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Shen')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Shen.png" alt="Shen">
-      <p>Shen</p>
-    </div>
-    <div class="champion-card" onclick="showDetails('Urgot')">
-      <img src="https://ddragon.leagueoflegends.com/cdn/15.1.1/img/champion/Urgot.png" alt="Urgot">
-      <p>Urgot</p>
-    </div>
-  </section>
+</nav>
 
-  <section id="details">
-    <h2 id="champ-name">Selecciona un campeón</h2>
-    <p id="champ-builds">Aquí aparecerán las builds recomendadas.</p>
-    <p id="champ-matchups">Aquí aparecerán los mejores matchups y peores matchups según winrate.</p>
-    <p id="champ-winrate">Winrate general: --%</p>
-  </section>
+<section class="hero">
+    <h1>MASTER EVERY TOP MATCHUP</h1>
 
-<!-- AMBESSA MATCHUPS COMPLETOS (oculto por defecto) -->
-<section id="ambessa-all-matchups" class="matchup-section" style="display:none;">
-  <h2>📊 Ambessa – Matchups Top Lane (Winrates)</h2>
-  
-  <div class="matchup-block">
-    <h3 style="color:#ff6666;">🔻 Desfavorables o Difíciles</h3>
-    <ul>
-      <li><strong>Malzahar:</strong> ~39.6%</li>
-      <li><strong>Teemo:</strong> ~43.9%</li>
-      <li><strong>Riven:</strong> ~45.6%</li>
-      <li><strong>Singed:</strong> ~46.1%</li>
-      <li><strong>Poppy:</strong> ~46.7%</li>
-      <li><strong>Kled:</strong> ~46.8%</li>
-      <li><strong>Camille:</strong> ~46.8%</li>
-      <li><strong>Tahm Kench:</strong> ~47.1%</li>
-      <li><strong>Swain:</strong> ~47.3%</li>
-      <li><strong>Warwick:</strong> ~47.4%</li>
-      <li><strong>Garen:</strong> ~47.4%</li>
-    </ul>
-  </div>
-
-  <div class="matchup-block">
-    <h3 style="color:#ffcc00;">⚖️ Even / Técnicos</h3>
-    <ul>
-      <li><strong>Nasus:</strong> ~47.6%</li>
-      <li><strong>Irelia:</strong> ~47.8%</li>
-      <li><strong>Kennen:</strong> ~47.8%</li>
-      <li><strong>Shen:</strong> ~47.9%</li>
-      <li><strong>Akali:</strong> ~48.1%</li>
-      <li><strong>Renekton:</strong> ~48.3%</li>
-      <li><strong>Darius:</strong> ~48.9%</li>
-      <li><strong>Cassiopeia:</strong> ~48.9%</li>
-    </ul>
-  </div>
-
-  <div class="matchup-block">
-    <h3 style="color:#66ff66;">✔️ Favorables</h3>
-    <ul>
-      <li><strong>Heimerdinger:</strong> ~51.1%</li>
-      <li><strong>Sett:</strong> ~51.1%</li>
-      <li><strong>K’Sante:</strong> ~51.2%</li>
-      <li><strong>Mordekaiser:</strong> ~51.2%</li>
-      <li><strong>Pantheon:</strong> ~51.3%</li>
-      <li><strong>Yorick:</strong> ~51.4%</li>
-      <li><strong>Udyr:</strong> ~51.4%</li>
-      <li><strong>Aatrox:</strong> ~51.5%</li>
-      <li><strong>Ornn:</strong> ~51.5%</li>
-      <li><strong>Vladimir:</strong> ~52.2%</li>
-      <li><strong>Kayn:</strong> ~52.3%</li>
-      <li><strong>Fiora:</strong> ~52.4%</li>
-      <li><strong>Sion:</strong> ~52.4%</li>
-      <li><strong>Kayle:</strong> ~52.7%</li>
-      <li><strong>Gnar:</strong> ~52.7%</li>
-      <li><strong>Yasuo:</strong> ~53.0%</li>
-      <li><strong>Gwen:</strong> ~53.3%</li>
-      <li><strong>Dr. Mundo:</strong> ~54.2%</li>
-      <li><strong>Yone:</strong> ~54.9%</li>
-      <li><strong>Rek’Sai:</strong> ~55.9%</li>
-      <li><strong>Lee Sin:</strong> ~56.1%</li>
-    </ul>
-  </div>
-
-  <p class="matchup-desc">
-    Lista de matchups top lane con winrates aproximados de Ambessa contra otros campeones, basada en estadísticas de LoLalytics y grandes datasets agregados. La efectividad puede variar según el parche, el elo y tu estilo de juego.
-  </p>
+    <p>
+        Learn how to dominate top lane with Ornn against every champion.
+    </p>
 </section>
 
-<script>
-  function showDetails(champ) {
-    document.getElementById('champ-name').textContent = champ;
-    document.getElementById('champ-builds').textContent = "Builds recomendadas: " + champData[champ].builds;
-    document.getElementById('champ-matchups').textContent = "Matchups: " + champData[champ].matchups;
-    document.getElementById('champ-winrate').textContent = "Winrate: " + champData[champ].winrate;
+<section class="grid">
 
-    // Solo para Ambessa: toggle matchups
-    const ambessaSection = document.getElementById('ambessa-all-matchups');
-    if(champ === 'Ambessa') {
-      ambessaSection.style.display = ambessaSection.style.display === 'none' ? 'block' : 'none';
-    } else {
-      ambessaSection.style.display = 'none'; // ocultar si otro champ
-    }
-  }
-</script>
+    <?php foreach($matchups as $matchup): ?>
 
+        <a href="matchup.php?champ=<?php echo strtolower($matchup['name']); ?>">
+
+            <div class="card">
+
+                <img src="<?php echo $matchup['image']; ?>">
+
+                <div class="card-content">
+
+                    <div class="champion-name">
+                        <?php echo $matchup['name']; ?>
+                    </div>
+
+                    <div class="difficulty">
+                        <?php echo $matchup['difficulty']; ?>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    <?php endforeach; ?>
+
+</section>
+
+<footer class="footer">
+    © <?php echo date("Y"); ?> Ornn Matchups — Built for Top Lane grinders.
+</footer>
 
 </body>
 </html>
